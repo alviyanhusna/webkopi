@@ -229,7 +229,7 @@
                                 <use href="img/feather-sprite.svg#shopping-cart" />
                             </svg>
                         </a>
-                        <a href="#" class="item-detail-button">
+                        <a href="#" class="item-detail-button" @click.prevent="$store.cart.detail(item)">
                             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <use href="img/feather-sprite.svg#eye" />
@@ -334,12 +334,10 @@
         <div class="modal-container">
             <a href="#" class="close-icon"><i data-feather="x"></i></a>
             <div class="modal-content">
-                <img src="img/products/1.jpg" alt="produk 1">
+                <img :src="`img/products/${$store.cart.selected_item?.img}`" :alt="$store.cart.selected_item?.name">
                 <div class="product-content">
-                    <h3>Produk 1</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium fuga animi temporibus a
-                        exercitationem suscipit quia atque amet laboriosam quaerat, distinctio ipsa nisi, veritatis quo.
-                    </p>
+                    <h3 x-text="$store.cart.selected_item?.name"></h3>
+                    <p x-text="$store.cart.selected_item?.desc"></p>
                     <div class="product-stars">
                         <i data-feather="star" class="star-full"></i>
                         <i data-feather="star" class="star-full"></i>
@@ -348,7 +346,7 @@
                         <i data-feather="star"></i>
                     </div>
                     <div class="product-price">
-                        IDR 15.000 <span>IDR 30.000</span>
+                        <span x-text="`IDR ${$store.cart.selected_item?.price}`"></span>
                     </div>
                     <a href="#"><i data-feather="shopping-cart"></i><span>add to cart</span></a>
                 </div>

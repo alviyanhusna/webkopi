@@ -13,6 +13,12 @@ document.addEventListener('alpine:init', () => {
         items: [],
         total: 0,
         quantity: 0,
+        selected_item: null,
+        detail(item) {
+            document.getElementById('item-detail-modal').style.display = 'flex';
+            this.selected_item = item;
+            console.log(this.selected_item);
+        },
         add(newItem) {
             // cek apahah ada barang yang sama di cart
             const cartItem = this.items.find((item) => item.id === newItem.id);
