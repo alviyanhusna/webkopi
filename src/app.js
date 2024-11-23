@@ -74,6 +74,12 @@ document.addEventListener('alpine:init', () => {
         },
     });
 
+    window.onclick = (event) => {
+        if (event.target === document.getElementById('item-detail-modal')) {
+            document.getElementById('item-detail-modal').style.display = 'none';
+        }
+    };
+
 });
 
 
