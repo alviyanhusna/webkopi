@@ -14,10 +14,9 @@ document.addEventListener('alpine:init', () => {
         total: 0,
         quantity: 0,
         selected_item: null,
-        detail(item) {
-            document.getElementById('item-detail-modal').style.display = 'flex';
+        detail(item = null) {
+            document.getElementById('item-detail-modal').style.display = item ? 'flex' : 'none';
             this.selected_item = item;
-            console.log(this.selected_item);
         },
         add(newItem) {
             // cek apahah ada barang yang sama di cart

@@ -332,7 +332,8 @@
 
     <div class="modal" id="item-detail-modal" x-data>
         <div class="modal-container">
-            <a href="#" class="close-icon"><i data-feather="x"></i></a>
+            <a href="javascript:void(0)" @click="$store.cart.detail(null)" class="close-icon"><i
+                    data-feather="x"></i></a>
             <div class="modal-content">
                 <img :src="`img/products/${$store.cart.selected_item?.img}`" :alt="$store.cart.selected_item?.name">
                 <div class="product-content">
