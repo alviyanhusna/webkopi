@@ -44,6 +44,8 @@ document.addEventListener('alpine:init', () => {
                     }
                 });
             }
+
+            document.getElementById('item-detail-modal').style.display = 'none';
         },
         remove(id) {
             const cartItem = this.items.find((item) => item.id === id);
