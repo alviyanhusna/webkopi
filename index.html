@@ -349,7 +349,8 @@
                     <div class="product-price">
                         <span x-text="`IDR ${$store.cart.selected_item?.price}`"></span>
                     </div>
-                    <a href="#"><i data-feather="shopping-cart"></i><span>add to cart</span></a>
+                    <a href="#" @click.prevent="$store.cart.add($store.cart.selected_item)"><i
+                            data-feather="shopping-cart"></i><span>add to cart</span></a>
                 </div>
             </div>
         </div>
