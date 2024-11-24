@@ -48,7 +48,8 @@
 
             <!-- search form start -->
             <div class="search-form">
-                <input type="search" id="search-box" placeholder="search here..." x-model="search">
+                <input type="search" id="search-box" placeholder="search here..." x-model="search"
+                    @input="window.scrollTo({behavior: 'smooth', top: document.querySelector('#products').offsetTop})">
 
                 <label for="search-box"><i data-feather="search"></i></label>
             </div>
