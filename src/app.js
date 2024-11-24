@@ -1,5 +1,6 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('products', () => ({
+        search: '',
         items: [
             { id: 1, name: 'torabika', img: '1.jpeg', price: 20000 },
             { id: 2, name: 'nescaffe', img: '2.jpg', price: 25000 },
@@ -7,6 +8,11 @@ document.addEventListener('alpine:init', () => {
             { id: 4, name: 'good day', img: '4.jpg', price: 30000 },
             { id: 5, name: 'abc', img: '5.jpg', price: 25000 },
         ],
+        get filteredItems() {
+            return this.items.filter(
+                i => i.name.toLowerCase().includes(this.search.toLowerCase())
+            )
+        },
     }));
 
     Alpine.store('cart', {
